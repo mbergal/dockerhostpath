@@ -36,6 +36,12 @@ jobs:
     - name: Test
       run: go test -v .
 
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+        with:
+          name: dockerhostpath
+          path: dockerhostpath
+          
     - name: github-action-publish-binaries
       uses: skx/github-action-publish-binaries@release-1.3     
       env:
